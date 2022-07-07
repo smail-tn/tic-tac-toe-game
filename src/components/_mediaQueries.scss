@@ -1,0 +1,29 @@
+@use "../config/vars" as *;
+
+//  home media query
+@include media(md, "max") {
+  .home {
+    flex-direction: column-reverse;
+    &__data {
+      text-align: center;
+      flex: none;
+      margin-left: 0;
+    }
+    &__social__icon {
+      flex: none;
+      flex-direction: row;
+    }
+    &__img {
+      display: none;
+    }
+  }
+  // / services /
+
+  .services {
+    &__data {
+      .card {
+        padding: var(--m-5);
+      }
+    }
+  }
+}

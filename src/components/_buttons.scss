@@ -1,0 +1,49 @@
+@use "../config/vars" as *;
+
+/* ============= BUTTONS ============ */
+.btn {
+  transition: all 0.15s ease-in;
+  background-color: transparent;
+  border: 1px solid transparent;
+  text-transform: capitalize;
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.2rem;
+  text-align: center;
+  white-space: nowrap;
+  position: relative;
+  user-select: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.main-btn {
+  border-radius: 5px;
+  padding: 12px 40px;
+  color: var(--title-clr);
+  box-shadow: var(--shadow);
+  &:hover {
+    @include shadowClr();
+  }
+}
+//   ripple effects
+.ripple {
+  overflow: hidden !important ;
+  .ink {
+    user-select: none;
+    pointer-events: none;
+    animation: ripple 600ms linear;
+    background-color: black(0.2);
+    transform: scale(0);
+    position: absolute;
+    @include circle;
+  }
+}
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+// cursor
